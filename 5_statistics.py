@@ -152,10 +152,56 @@ def correlation(x, y):
 #and 1. 
 
 #sometimes good to remove outliers individually since correlation
-#is also strongly affected by outliers. could be a test account data point.
+#is also strongly affected by outliers. could be a test account data point
 
 
 
 #---------------------------------------------
 #simpson's paradox
+
+#correlations can be misleading when confounding variables are ignored
+
+#key issue is correlation is measuring the relationship between 2 variables
+#all else being equal. this is a poor assumption. 
+
+#the way to avoid this is to know your data. 
+
+
+
+#---------------------------------------------
+#other correlational caveats
+
+#a correlation of zero indicates there is no linear relationship between 2 variables.
+#there could be other relationships though
+
+x = [-2, -1, 0, 1, 2]
+y = [2, 1, 0, 1, 2]
+#the above have 0 correlation. the relationship is that each element of y equals
+#the absolute value of x. what they don't hae is a relationship in which knowing
+#how x_i compares to mean(x) gives us info about how y_i compares to mean(y). 
+
+#correlation also says nothing about the size of the relationship.
+x = [-2, 1, 0, 1, 2]
+y = [99.98, 99.99, 100, 100.01, 10.02]
+#these are perfectly correlated bu it's quite possible the relationship
+#is not that interesting. 
+
+
+
+#---------------------------------------------
+#correlation and causation 
+
+#its not the same shit. 
+#x could cause y, inverse, both eachother, 3rd factor both, or nada
+
+#can feel more confident about causality by conudcting randomized trials
+
+
+
+#---------------------------------------------
+#further exploration
+
+#scipy, pandas, and statsmodels have many stats functions
+#good stats books are openintro statistics and openstax intro stats
+
 
